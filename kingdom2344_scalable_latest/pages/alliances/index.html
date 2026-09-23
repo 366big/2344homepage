@@ -378,6 +378,79 @@ h1{
   .alliance-grid{grid-template-columns:1fr !important;}
 }
 
+
+/* FINAL MOBILE MODAL FIX
+   Keep the alliance modal above the shared sticky header.
+   The backdrop itself does not scroll; only the modal content scrolls.
+*/
+.modal-backdrop{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:20000 !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  padding:12px !important;
+  -webkit-overflow-scrolling:auto !important;
+  overscroll-behavior:none !important;
+}
+
+.modal-backdrop.open{
+  z-index:20000 !important;
+}
+
+.modal{
+  position:relative !important;
+  width:min(820px,94vw) !important;
+  max-height:calc(100dvh - 24px) !important;
+  height:auto !important;
+  margin:0 auto !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  -webkit-overflow-scrolling:touch !important;
+  overscroll-behavior:contain !important;
+}
+
+.modal-top{
+  position:sticky !important;
+  top:0 !important;
+  z-index:50 !important;
+  background:linear-gradient(180deg,#111b1d 0%,#111b1d 86%,rgba(17,27,29,.96) 100%) !important;
+}
+
+.modal-close{
+  position:relative !important;
+  z-index:60 !important;
+}
+
+@media(max-width:650px){
+  .modal-backdrop{
+    padding:8px !important;
+  }
+  .modal{
+    width:100% !important;
+    max-height:calc(100dvh - 16px) !important;
+  }
+  .modal-inner{
+    padding:0 14px 24px !important;
+  }
+  .modal-top{
+    margin:0 -14px !important;
+    padding:18px 14px 18px !important;
+  }
+  .modal-title{
+    font-size:32px !important;
+    letter-spacing:5px !important;
+  }
+  .modal-close{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    font-size:24px !important;
+    background:#0b1315 !important;
+  }
+}
+
 </style>
 <link rel="stylesheet" href="../../css/global.css">
 </head>
@@ -526,16 +599,12 @@ sel.onchange=()=>setLang(sel.value);setLang(localStorage.getItem('kingdom2344_la
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
     modal.scrollTop = 0;
-    document.body.classList.add("modal-open");
-    document.documentElement.classList.add("modal-open");
     document.body.style.overflow = "hidden";
   }
 
   function closeAlliance(){
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden","true");
-    document.body.classList.remove("modal-open");
-    document.documentElement.classList.remove("modal-open");
     document.body.style.overflow = "";
   }
 
