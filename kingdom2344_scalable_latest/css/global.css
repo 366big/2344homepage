@@ -177,3 +177,20 @@
   .nav { overflow:visible !important; }
   .navin { overflow:visible !important; }
 }
+
+/* =========================================================
+   KINGDOM 2344 — GLOBAL ROYAL ARCHIVE TYPOGRAPHY
+   Use the refined Georgia-style serif from the Alliances page
+   consistently across the entire site.
+   ========================================================= */
+html, body,
+body *,
+button, input, select, textarea {
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+
+/* Preserve the archive's elegant letter spacing and readability. */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

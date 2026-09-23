@@ -287,18 +287,17 @@ h1{
 <nav class="nav"><div class="navin">
 <a class="brand" href="../../home.html">2344 <small>KINGDOM ARCHIVE</small></a>
 <div class="nav-actions"><div class="links">
-<a href="../../home.html">Home</a>
-<a href="../kingdom/">Kingdom</a>
-<a class="active" href="../alliances/">Alliances</a>
-<a href="../rankings/">Ranking</a>
-<a href="../migration/">Migration</a>
-</div></div>
-</div></nav>
+<a href="../../home.html" data-i18n="home">Home</a>
+<a href="../kingdom/" data-i18n="kingdom">Kingdom</a>
+<a class="active" href="../alliances/" data-i18n="alliances">Alliances</a>
+<a href="../rankings/" data-i18n="ranking">Ranking</a>
+<a href="../migration/" data-i18n="migration">Migration</a>
+</div><div class="lang"><select id="language" aria-label="Language"></select></div></div></nav>
 
 <main>
   <header class="heading">
-    <div class="eyebrow">Kingdom 2344 · Royal Archive</div>
-    <h1>Alliances</h1>
+    <div class="eyebrow" data-i18n="eyebrow">Kingdom 2344 · Royal Archive</div>
+    <h1 data-i18n="title">Alliances</h1>
     <div class="rule"></div>
   </header>
 
@@ -316,7 +315,7 @@ h1{
     <div class="modal-inner">
       <div class="modal-top">
         <div>
-          <div class="modal-kicker">Kingdom 2344 · Alliance</div>
+          <div class="modal-kicker" data-i18n="modalKicker">Kingdom 2344 · Alliance</div>
           <h2 class="modal-title" id="modalTitle">SUN</h2>
         </div>
         <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
@@ -324,62 +323,69 @@ h1{
 
       <div class="info-grid">
         <div class="info-item">
-          <div class="info-label">⏰ Main Events / Activity Time</div>
+          <div class="info-label" data-i18n="activity">⏰ Main Events / Activity Time</div>
           <div class="info-value" id="modalActivity">—</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">🐻 Bear Trap</div>
+          <div class="info-label" data-i18n="bear">🐻 Bear Trap</div>
           <div class="info-value"><strong>1st Team:</strong> — &nbsp; · &nbsp; <strong>2nd Team:</strong> —</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">⚔️ Swordland</div>
+          <div class="info-label" data-i18n="swordland">⚔️ Swordland</div>
           <div class="info-value"><strong>1st Team:</strong> — &nbsp; · &nbsp; <strong>2nd Team:</strong> —</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">🔺 Tri-Alliance</div>
+          <div class="info-label" data-i18n="tri">🔺 Tri-Alliance</div>
           <div class="info-value"><strong>1st Team:</strong> — &nbsp; · &nbsp; <strong>2nd Team:</strong> —</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">🌐 Main Language</div>
+          <div class="info-label" data-i18n="mainLanguage">🌐 Main Language</div>
           <div class="info-value" id="modalLanguage">—</div>
         </div>
 
         <div class="info-item full">
-          <div class="info-label">💬 R5's Message</div>
+          <div class="info-label" data-i18n="r5">💬 R5's Message</div>
           <div class="info-value" id="modalMessage">—</div>
         </div>
 
         <div class="info-item full">
-          <div class="info-label">👥 Who We're Looking For</div>
+          <div class="info-label" data-i18n="looking">👥 Who We're Looking For</div>
           <div class="info-value" id="modalLooking">—</div>
         </div>
 
         <div class="info-item full">
-          <div class="info-label">📖 Alliance Introduction</div>
+          <div class="info-label" data-i18n="introLabel">📖 Alliance Introduction</div>
           <div class="info-value" id="modalIntro">Alliance introduction</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">Recruitment</div>
-          <div class="info-value">Check the alliance page for current status</div>
+          <div class="info-label" data-i18n="recruitment">Recruitment</div>
+          <div class="info-value" data-i18n="recruitmentText">Check the alliance page for current status</div>
         </div>
 
         <div class="info-item">
-          <div class="info-label">Contact</div>
+          <div class="info-label" data-i18n="contact">Contact</div>
           <div class="info-value">Alliance Manager 이정</div>
         </div>
       </div>
 
-      <div class="modal-footer">Kingdom 2344 · Royal Archive</div>
+      <div class="modal-footer" data-i18n="footer">Kingdom 2344 · Royal Archive</div>
     </div>
   </div>
 </div>
 
 
+<script>
+const LANGS=[['en','English'],['ko','한국어'],['de','Deutsch'],['es','Español'],['fr','Français'],['ar','العربية'],['id','Bahasa Indonesia'],['zh-TW','繁體中文'],['zh-CN','简体中文'],['ja','日本語']];
+const T={"en":{"home":"Home","kingdom":"Kingdom","alliances":"Alliances","ranking":"Ranking","migration":"Migration","eyebrow":"Kingdom 2344 · Royal Archive","title":"Alliances","modalKicker":"Kingdom 2344 · Alliance","activity":"⏰ Main Events / Activity Time","bear":"🐻 Bear Trap","swordland":"⚔️ Swordland","tri":"🔺 Tri-Alliance","mainLanguage":"🌐 Main Language","r5":"💬 R5's Message","looking":"👥 Who We're Looking For","introLabel":"📖 Alliance Introduction","recruitment":"Recruitment","recruitmentText":"Check the alliance page for current status","contact":"Contact","footer":"Kingdom 2344 · Royal Archive"},"ko":{"home":"홈","kingdom":"왕국 소개","alliances":"연맹","ranking":"랭킹","migration":"이민","eyebrow":"2344 왕국 · 왕실 아카이브","title":"연맹","modalKicker":"2344 왕국 · 연맹","activity":"⏰ 주요 활동 시간","bear":"🐻 곰 사냥","swordland":"⚔️ 소드랜드","tri":"🔺 삼연맹","mainLanguage":"🌐 주요 언어","r5":"💬 R5의 메시지","looking":"👥 모집 대상","introLabel":"📖 연맹 소개","recruitment":"모집","recruitmentText":"현재 모집 상태는 연맹 페이지에서 확인해주세요","contact":"연락처","footer":"2344 왕국 · 왕실 아카이브"},"de":{"home":"Startseite","kingdom":"Königreich","alliances":"Allianzen","ranking":"Rangliste","migration":"Migration","eyebrow":"Kingdom 2344 · Royal Archive","title":"Allianzen","modalKicker":"Königreich 2344 · Allianz","activity":"⏰ Hauptaktivitäten / Aktivitätszeit","bear":"🐻 Bärenfalle","swordland":"⚔️ Swordland","tri":"🔺 Tri-Allianz","mainLanguage":"🌐 Hauptsprache","r5":"💬 Nachricht von R5","looking":"👥 Wen wir suchen","introLabel":"📖 Allianzvorstellung","recruitment":"Rekrutierung","recruitmentText":"Aktuellen Status auf der Allianzseite prüfen","contact":"Kontakt","footer":"Kingdom 2344 · Royal Archive"},"es":{"home":"Inicio","kingdom":"Reino","alliances":"Alianzas","ranking":"Clasificación","migration":"Migración","eyebrow":"Kingdom 2344 · Royal Archive","title":"Alianzas","modalKicker":"Reino 2344 · Alianza","activity":"⏰ Eventos principales / Horario","bear":"🐻 Trampa del Oso","swordland":"⚔️ Swordland","tri":"🔺 Tri-Alianza","mainLanguage":"🌐 Idioma principal","r5":"💬 Mensaje del R5","looking":"👥 A quién buscamos","introLabel":"📖 Presentación de la alianza","recruitment":"Reclutamiento","recruitmentText":"Consulta el estado actual en la página de la alianza","contact":"Contacto","footer":"Kingdom 2344 · Royal Archive"},"fr":{"home":"Accueil","kingdom":"Royaume","alliances":"Alliances","ranking":"Classement","migration":"Migration","eyebrow":"Kingdom 2344 · Royal Archive","title":"Alliances","modalKicker":"Royaume 2344 · Alliance","activity":"⏰ Événements principaux / Horaires","bear":"🐻 Piège à ours","swordland":"⚔️ Swordland","tri":"🔺 Tri-Alliance","mainLanguage":"🌐 Langue principale","r5":"💬 Message du R5","looking":"👥 Profils recherchés","introLabel":"📖 Présentation de l’alliance","recruitment":"Recrutement","recruitmentText":"Consultez la page de l’alliance pour le statut actuel","contact":"Contact","footer":"Kingdom 2344 · Royal Archive"},"ar":{"home":"الرئيسية","kingdom":"المملكة","alliances":"التحالفات","ranking":"التصنيف","migration":"الهجرة","eyebrow":"Kingdom 2344 · Royal Archive","title":"التحالفات","modalKicker":"المملكة 2344 · التحالف","activity":"⏰ الأنشطة الرئيسية / الوقت","bear":"🐻 فخ الدب","swordland":"⚔️ Swordland","tri":"🔺 التحالف الثلاثي","mainLanguage":"🌐 اللغة الرئيسية","r5":"💬 رسالة R5","looking":"👥 من نبحث عنهم","introLabel":"📖 مقدمة التحالف","recruitment":"التجنيد","recruitmentText":"تحقق من حالة التجنيد الحالية في صفحة التحالف","contact":"التواصل","footer":"Kingdom 2344 · Royal Archive"},"id":{"home":"Beranda","kingdom":"Kerajaan","alliances":"Aliansi","ranking":"Peringkat","migration":"Migrasi","eyebrow":"Kingdom 2344 · Royal Archive","title":"Aliansi","modalKicker":"Kerajaan 2344 · Aliansi","activity":"⏰ Acara Utama / Waktu Aktivitas","bear":"🐻 Bear Trap","swordland":"⚔️ Swordland","tri":"🔺 Tri-Aliansi","mainLanguage":"🌐 Bahasa Utama","r5":"💬 Pesan R5","looking":"👥 Yang Kami Cari","introLabel":"📖 Pengenalan Aliansi","recruitment":"Rekrutmen","recruitmentText":"Lihat status terbaru di halaman aliansi","contact":"Kontak","footer":"Kingdom 2344 · Royal Archive"},"zh-TW":{"home":"首頁","kingdom":"王國介紹","alliances":"聯盟","ranking":"排行榜","migration":"移民","eyebrow":"Kingdom 2344 · Royal Archive","title":"聯盟","modalKicker":"2344王國 · 聯盟","activity":"⏰ 主要活動 / 活動時間","bear":"🐻 熊陷阱","swordland":"⚔️ Swordland","tri":"🔺 三聯盟","mainLanguage":"🌐 主要語言","r5":"💬 R5訊息","looking":"👥 招募對象","introLabel":"📖 聯盟介紹","recruitment":"招募","recruitmentText":"請查看聯盟頁面了解目前狀態","contact":"聯絡方式","footer":"Kingdom 2344 · Royal Archive"},"zh-CN":{"home":"首页","kingdom":"王国介绍","alliances":"联盟","ranking":"排行榜","migration":"移民","eyebrow":"Kingdom 2344 · Royal Archive","title":"联盟","modalKicker":"2344王国 · 联盟","activity":"⏰ 主要活动 / 活动时间","bear":"🐻 熊陷阱","swordland":"⚔️ Swordland","tri":"🔺 三联盟","mainLanguage":"🌐 主要语言","r5":"💬 R5消息","looking":"👥 招募对象","introLabel":"📖 联盟介绍","recruitment":"招募","recruitmentText":"请查看联盟页面了解当前状态","contact":"联系方式","footer":"Kingdom 2344 · Royal Archive"},"ja":{"home":"ホーム","kingdom":"王国紹介","alliances":"同盟","ranking":"ランキング","migration":"移民","eyebrow":"Kingdom 2344 · Royal Archive","title":"同盟","modalKicker":"2344王国 · 同盟","activity":"⏰ 主なイベント / 活動時間","bear":"🐻 ベアトラップ","swordland":"⚔️ Swordland","tri":"🔺 トライアライアンス","mainLanguage":"🌐 主な言語","r5":"💬 R5メッセージ","looking":"👥 募集対象","introLabel":"📖 同盟紹介","recruitment":"募集","recruitmentText":"現在の状況は同盟ページをご確認ください","contact":"連絡先","footer":"Kingdom 2344 · Royal Archive"}};
+const sel=document.getElementById('language');LANGS.forEach(([k,n])=>{const o=document.createElement('option');o.value=k;o.textContent=n;sel.appendChild(o)});
+function setLang(k){const t=T[k]||T.en;document.documentElement.lang=k;document.documentElement.dir=k==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(e=>{if(t[e.dataset.i18n]!=null)e.textContent=t[e.dataset.i18n]});sel.value=k;localStorage.setItem('kingdom2344_lang',k)}
+sel.onchange=()=>setLang(sel.value);setLang(localStorage.getItem('kingdom2344_lang')||'en');
+</script>
 <script>
 (() => {
   const modal = document.getElementById("allianceModal");
