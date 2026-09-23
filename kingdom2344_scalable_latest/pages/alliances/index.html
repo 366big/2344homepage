@@ -172,6 +172,69 @@ h1{
   .card:nth-child(n){grid-column:auto;max-width:none;margin:0}
 }
 
+
+/* Alliance quick index */
+.alliance-index{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:0 auto 38px;
+  padding:0 8px;
+}
+.alliance-index a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:78px;
+  height:36px;
+  padding:0 16px;
+  border:1px solid rgba(226,196,139,.28);
+  background:rgba(7,13,15,.72);
+  color:rgba(239,232,215,.78);
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
+  transition:.25s ease;
+}
+.alliance-index a:hover{
+  color:#f1d49a;
+  border-color:rgba(226,196,139,.7);
+  background:rgba(226,196,139,.07);
+  transform:translateY(-2px);
+}
+.card.anchor-highlight{
+  animation:allianceHighlight 1.2s ease;
+}
+@keyframes allianceHighlight{
+  0%,100%{box-shadow:0 18px 50px rgba(0,0,0,.48)}
+  35%{box-shadow:0 0 0 2px rgba(226,196,139,.8),0 0 38px rgba(226,196,139,.24),0 28px 65px rgba(0,0,0,.68)}
+}
+@media(max-width:680px){
+  .alliance-index{gap:8px;margin-bottom:28px}
+  .alliance-index a{min-width:68px;height:34px;padding:0 12px;font-size:9px}
+}
+
+/* Modal viewport fix: always keep the close button visible and allow scrolling */
+.modal-backdrop{
+  align-items:flex-start;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:20px;
+}
+.modal{
+  max-height:calc(100vh - 40px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.modal-inner{padding:34px 46px 46px}
+@media(max-width:650px){
+  .modal-backdrop{padding:10px}
+  .modal{max-height:calc(100vh - 20px)}
+  .modal-inner{padding:26px 18px 24px}
+}
+
 /* Alliance detail modal */
 .modal-backdrop{
   position:fixed;
@@ -303,6 +366,18 @@ h1{
 }
 
 .alliance-open{padding:0;appearance:none;color:inherit;font:inherit;cursor:pointer;text-align:left;width:100%;}
+
+/* Alliance layout: 4 cards per row */
+.alliance-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+}
+@media(max-width:900px){
+  .alliance-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media(max-width:560px){
+  .alliance-grid{grid-template-columns:1fr !important;}
+}
+
 </style>
 <link rel="stylesheet" href="../../css/global.css">
 </head>
@@ -324,15 +399,26 @@ h1{
     <div class="rule"></div>
   </header>
 
+  <nav class="alliance-index" aria-label="Alliance quick navigation">
+    <a href="#alliance-SUN">SUN</a>
+    <a href="#alliance-VIP">VIP</a>
+    <a href="#alliance-ZZZ">ZZZ</a>
+    <a href="#alliance-FIL">FIL</a>
+    <a href="#alliance-ODI">ODI</a>
+    <a href="#alliance-WAS">WAS</a>
+    <a href="#alliance-INA">INA</a>
+    <a href="#alliance-GRD">GRD</a>
+  </nav>
+
   <section class="cards" aria-label="Kingdom 2344 Alliances">
-    <button class="card alliance-open" type="button" data-alliance="SUN"><img src="../../assets/images/SUN.png" alt="SUN"></button>
-    <button class="card alliance-open" type="button" data-alliance="VIP"><img src="../../assets/images/VIP.png" alt="VIP"></button>
-    <button class="card alliance-open" type="button" data-alliance="ZZZ"><img src="../../assets/images/ZZZ.png" alt="ZZZ"></button>
-    <button class="card alliance-open" type="button" data-alliance="FIL"><img src="../../assets/images/FIL.png" alt="FIL"></button>
-    <button class="card alliance-open" type="button" data-alliance="ODI"><img src="../../assets/images/ODI.png" alt="ODI"></button>
-    <button class="card alliance-open" type="button" data-alliance="WAS"><img src="../../assets/images/WAS.png" alt="WAS"></button>
-    <button class="card alliance-open" type="button" data-alliance="INA"><img src="../../assets/images/INA.png" alt="INA"></button>
-    <button class="card alliance-open" type="button" data-alliance="GRD"><img src="../../assets/images/GRD.png" alt="GRD"></button>
+    <button class="card alliance-open" id="alliance-SUN" type="button" data-alliance="SUN"><img src="../../assets/images/SUN.png" alt="SUN"></button>
+    <button class="card alliance-open" id="alliance-VIP" type="button" data-alliance="VIP"><img src="../../assets/images/VIP.png" alt="VIP"></button>
+    <button class="card alliance-open" id="alliance-ZZZ" type="button" data-alliance="ZZZ"><img src="../../assets/images/ZZZ.png" alt="ZZZ"></button>
+    <button class="card alliance-open" id="alliance-FIL" type="button" data-alliance="FIL"><img src="../../assets/images/FIL.png" alt="FIL"></button>
+    <button class="card alliance-open" id="alliance-ODI" type="button" data-alliance="ODI"><img src="../../assets/images/ODI.png" alt="ODI"></button>
+    <button class="card alliance-open" id="alliance-WAS" type="button" data-alliance="WAS"><img src="../../assets/images/WAS.png" alt="WAS"></button>
+    <button class="card alliance-open" id="alliance-INA" type="button" data-alliance="INA"><img src="../../assets/images/INA.png" alt="INA"></button>
+    <button class="card alliance-open" id="alliance-GRD" type="button" data-alliance="GRD"><img src="../../assets/images/GRD.png" alt="GRD"></button>
   </section>
 </main>
 <!-- Alliance information modal -->
@@ -450,6 +536,18 @@ sel.onchange=()=>setLang(sel.value);setLang(localStorage.getItem('kingdom2344_la
 
   document.querySelectorAll(".alliance-open").forEach(card => {
     card.addEventListener("click", () => openAlliance(card.dataset.alliance));
+  });
+
+  document.querySelectorAll(".alliance-index a").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      target.scrollIntoView({ behavior:"smooth", block:"center" });
+      target.classList.remove("anchor-highlight");
+      void target.offsetWidth;
+      target.classList.add("anchor-highlight");
+    });
   });
   closeBtn.addEventListener("click", closeAlliance);
   modal.addEventListener("click", e => { if(e.target === modal) closeAlliance(); });
