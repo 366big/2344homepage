@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kingdom 2344 — Royal Archive</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500&family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
 
 :root{
   --gold:#c79a52;
@@ -105,7 +105,7 @@ body{
 .overline:after{transform:scaleX(-1)}
 
 .number{
-  font-family:MedievalSharp,Cinzel,Georgia,serif;
+  font-family:Cinzel,Georgia,serif;
   font-size:clamp(82px,13vw,155px);
   line-height:.78;
   letter-spacing:-4px;
@@ -321,77 +321,14 @@ body{
     display: none !important;
   }
 }
-
-/* 2344 title font — MedievalSharp */
-.number { font-family: "MedievalSharp", Cinzel, Georgia, serif !important; font-weight: 400; }
-
-/* Entrance sequence layout fix */
-.sequence-item{
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-}
-.sequence-item.description{
-  display:block;
-}
-.sequence-item.description .description{
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-}
-.enter.sequence-item{
-  display:inline-flex;
-  width:auto;
-}
-
 </style>
 <link rel="stylesheet" href="css/global.css">
-<style>
-/* Entrance sequence animation */
-.sequence-item{
-  display:block;width:100%;opacity:0;
-  transform:translateY(22px);
-  animation:entranceReveal .9s cubic-bezier(.22,.61,.36,1) forwards;
-}
-.sequence-item.welcome{animation-delay:.45s}
-.sequence-item.tagline{animation-delay:1.15s}
-.sequence-item.number{animation-delay:1.85s}
-.sequence-item.kingdom{animation-delay:2.35s}
-.sequence-item.description{animation-delay:2.9s}
-.sequence-item.enter{animation-delay:4.8s !important}
-@keyframes entranceReveal{
-  to{opacity:1;transform:translateY(0)}
-}
-.hero-bg{
-  animation:heroAppear 1.4s ease-out both;
-}
-@keyframes heroAppear{
-  from{opacity:0;transform:scale(1.035)}
-  to{opacity:1;transform:scale(1)}
-}
-</style>
-
-
-<style>
-
-.enter,
-.enter-button,
-a[href*="home.html"],
-a[href*="home"]{
-  animation-delay:4.8s !important;
-}
-</style>
-
-<style>
-.enter,.enter-button,a[href*="home.html"],a[href*="home"]{
-  animation-delay:4.8s !important;
-}
-</style>
 </head>
 <body><div class="entry-lang"><select id="entryLanguage"></select></div>
 <div class="stage">
   <div class="hero"></div>
   <div class="vignette"></div>
+  <div class="grain"></div>
 
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
@@ -399,16 +336,16 @@ a[href*="home"]{
   <div class="crest">ROYAL ARCHIVE · 2344</div>
 
   <main class="intro">
-    <div class="overline"><span class="sequence-item welcome"><span data-e="welcome">WELCOME TO</span></span></div>
-    <span class="sequence-item number"><div class="number">2344</div></span>
-    <span class="sequence-item kingdom"><div class="kingdom">KINGDOM</div></span>
+    <div class="overline"><span data-e="welcome">WELCOME TO</span></div>
+    <div class="number">2344</div>
+    <div class="kingdom">KINGDOM</div>
     <div class="divider"></div>
-    <div class="statement"><span class="sequence-item tagline"><span data-e="tagline">DIFFERENT PEOPLE · ONE KINGDOM</span></span></div>
-    <span class="sequence-item description"><p class="description">
+    <div class="statement"><span data-e="tagline">DIFFERENT PEOPLE · ONE KINGDOM</span></div>
+    <p class="description">
       A kingdom shaped by cooperation, strategy and the people who call it home.
       Enter the archive and discover the story of Kingdom 2344.
-    </p></span>
-    <a class="enter sequence-item" href="home.html">
+    </p>
+    <a class="enter" href="home.html">
       ENTER THE KINGDOM <span class="arrow">→</span>
     </a>
   </main>
@@ -485,8 +422,5 @@ a[href*="home"]{
 </script>
 
 <script src="js/global.js"></script>
-
-
-
 </body>
 </html><script>const E={"ko": ["환영합니다", "다른 사람들 · 하나의 왕국", "협력과 전략으로 만들어진 2344 왕국의 이야기를 만나보세요.", "왕국 입장 →"], "en": ["WELCOME TO", "DIFFERENT PEOPLE · ONE KINGDOM", "A kingdom shaped by cooperation, strategy and the people who call it home. Enter the archive and discover the story of Kingdom 2344.", "ENTER THE KINGDOM →"], "de": ["WILLKOMMEN IN", "VERSCHIEDENE MENSCHEN · EIN KÖNIGREICH", "Ein Königreich geprägt von Zusammenarbeit, Strategie und seinen Menschen. Entdecke die Geschichte von Königreich 2344.", "KÖNIGREICH BETRETEN →"], "es": ["BIENVENIDO A", "PERSONAS DIFERENTES · UN SOLO REINO", "Un reino formado por cooperación, estrategia y sus habitantes. Descubre la historia del Reino 2344.", "ENTRAR AL REINO →"], "fr": ["BIENVENUE DANS", "DES PERSONNES DIFFÉRENTES · UN SEUL ROYAUME", "Un royaume façonné par la coopération, la stratégie et ses habitants. Découvrez l’histoire du Royaume 2344.", "ENTRER DANS LE ROYAUME →"], "ar": ["مرحبًا بكم في", "أشخاص مختلفون · مملكة واحدة", "مملكة تشكلت بالتعاون والاستراتيجية وبأيدي من يعتبرونها موطنًا لهم. اكتشف قصة مملكة 2344.", "دخول المملكة →"], "id": ["SELAMAT DATANG DI", "ORANG BERBEDA · SATU KERAJAAN", "Kerajaan yang dibentuk oleh kerja sama, strategi, dan orang-orangnya. Temukan kisah Kerajaan 2344.", "MASUK KE KERAJAAN →"], "zh-TW": ["歡迎來到", "不同的人 · 同一個王國", "一個由合作、策略與共同守護家園的人們所塑造的王國。探索2344王國的故事。", "進入王國 →"], "zh-CN": ["欢迎来到", "不同的人 · 同一个王国", "一个由合作、战略以及共同守护家园的人们塑造的王国。探索2344王国的故事。", "进入王国 →"], "ja": ["ようこそ", "異なる人々 · ひとつの王国", "協力と戦略、そして人々によって築かれた王国です。2344王国の物語をご覧ください。", "王国へ入る →"], "tr": ["HOŞ GELDİNİZ", "FARKLI İNSANLAR · TEK KRALLIK", "İş birliği, strateji ve halkıyla şekillenen 2344 Krallığı’nın hikâyesini keşfedin.", "KRALLIĞA GİR →"]};const EN={"ko": "한국어", "en": "English", "de": "Deutsch", "es": "Español", "fr": "Français", "ar": "العربية", "id": "Bahasa Indonesia", "zh-TW": "繁體中文", "zh-CN": "简体中文", "ja": "日本語", "tr": "Türkçe"};const q=document.getElementById('entryLanguage');Object.keys(EN).forEach(k=>{let o=document.createElement('option');o.value=k;o.textContent=EN[k];q.appendChild(o)});function eSet(k){document.documentElement.lang=k;document.documentElement.dir=k==='ar'?'rtl':'ltr';let a=E[k]||E.en;document.querySelector('[data-e=welcome]').textContent=a[0];document.querySelector('[data-e=tagline]').textContent=a[1];document.querySelector('[data-e=desc]').textContent=a[2];document.querySelector('[data-e=enter]').textContent=a[3];q.value=k;localStorage.setItem('kingdom2344_lang',k)}q.onchange=()=>eSet(q.value);eSet(localStorage.getItem('kingdom2344_lang')||'en');</script>
