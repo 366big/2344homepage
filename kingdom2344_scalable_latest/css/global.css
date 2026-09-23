@@ -158,3 +158,22 @@
     font-size:9px !important;
   }
 }
+
+
+/* ===== 2344 FINAL HEADER / CURSOR CONSISTENCY ===== */
+.nav,
+.navin,
+.nav-actions,
+.navin .links,
+.navin .brand,
+.navin .lang {
+  box-sizing:border-box;
+}
+.nav { isolation:isolate; }
+@media (pointer:fine){
+  .nav a, .nav button, .nav select { cursor:none !important; }
+}
+@media (max-width:760px){
+  .nav { overflow:visible !important; }
+  .navin { overflow:visible !important; }
+}
