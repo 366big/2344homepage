@@ -96,11 +96,37 @@
   flex:0 0 auto !important;
   margin:0 !important;
 }
-.navin .lang select{
-  height:32px !important;
+ .navin .lang select{
+  width:118px !important;
   min-width:118px !important;
-  padding:7px 10px !important;
+  height:32px !important;
+  padding:7px 28px 7px 10px !important;
   margin:0 !important;
+  box-sizing:border-box !important;
+  appearance:auto !important;
+  -webkit-appearance:auto !important;
+  background:#0b1519 !important;
+  color:#ddd4c2 !important;
+  border:1px solid rgba(185,154,97,.4) !important;
+  border-radius:0 !important;
+  font-family:Georgia, "Times New Roman", serif !important;
+  font-size:12px !important;
+  line-height:16px !important;
+  letter-spacing:.2px !important;
+  text-transform:none !important;
+  outline:none !important;
+  box-shadow:none !important;
+  cursor:none !important;
+}
+.navin .lang select:hover,
+.navin .lang select:focus{
+  border-color:rgba(185,154,97,.72) !important;
+  background:#0d191d !important;
+}
+.navin .lang select option{
+  background:#0b1519 !important;
+  color:#ddd4c2 !important;
+  font-family:Georgia, "Times New Roman", serif !important;
 }
 
 /* Keep the header compact and usable on phones.
@@ -108,36 +134,38 @@
 @media (max-width:760px){
   .navin{
     height:auto !important;
-    min-height:72px !important;
-    padding:10px 14px !important;
+    min-height:70px !important;
+    padding:10px 14px 9px !important;
     display:grid !important;
-    grid-template-columns:1fr auto !important;
-    grid-template-rows:auto auto !important;
+    grid-template-columns:minmax(0,1fr) auto !important;
+    grid-template-rows:32px auto !important;
     column-gap:12px !important;
     row-gap:8px !important;
     align-items:center !important;
+  }
+  .nav-actions{
+    display:contents !important;
   }
   .navin .brand{
     grid-column:1 !important;
     grid-row:1 !important;
     font-size:16px !important;
   }
-  .nav-actions{
+  .navin .links{
     grid-column:1 / -1 !important;
     grid-row:2 !important;
     width:100% !important;
     min-width:0 !important;
-    margin:0 !important;
     display:flex !important;
     justify-content:flex-start !important;
-    gap:12px !important;
+    gap:18px !important;
     overflow-x:auto !important;
     overflow-y:hidden !important;
     -webkit-overflow-scrolling:touch !important;
     scrollbar-width:none !important;
-    padding-bottom:2px !important;
+    padding:0 1px 2px !important;
   }
-  .nav-actions::-webkit-scrollbar{display:none !important}
+  .navin .links::-webkit-scrollbar{display:none !important}
   .navin .links{
     flex:0 0 auto !important;
     justify-content:flex-start !important;
@@ -150,12 +178,17 @@
     padding:5px 0 !important;
   }
   .navin .lang{
+    grid-column:2 !important;
+    grid-row:1 !important;
     margin-left:auto !important;
+    align-self:center !important;
   }
   .navin .lang select{
-    min-width:96px !important;
+    width:104px !important;
+    min-width:104px !important;
     height:30px !important;
-    font-size:9px !important;
+    padding:6px 24px 6px 9px !important;
+    font-size:11px !important;
   }
 }
 
