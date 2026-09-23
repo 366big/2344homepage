@@ -525,12 +525,17 @@ sel.onchange=()=>setLang(sel.value);setLang(localStorage.getItem('kingdom2344_la
     document.getElementById("modalIntro").textContent = item.intro;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
+    modal.scrollTop = 0;
+    document.body.classList.add("modal-open");
+    document.documentElement.classList.add("modal-open");
     document.body.style.overflow = "hidden";
   }
 
   function closeAlliance(){
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-open");
+    document.documentElement.classList.remove("modal-open");
     document.body.style.overflow = "";
   }
 
